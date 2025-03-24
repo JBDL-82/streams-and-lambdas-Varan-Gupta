@@ -26,6 +26,21 @@ class Employee {
     double salary;
 }
 ```
+Solution:
+
+Employee e1 = new Employee("Varan",500000);
+        Employee e2 = new Employee("Karan",3000);
+        Employee e3 = new Employee("Sharan",4000000);
+        
+        List<Employee> empObj = new ArrayList<>();
+        
+        empObj.add(e1);
+        empObj.add(e2);
+        empObj.add(e3);
+empObj.stream()
+        .filter(x-> x.salary > 50000)
+        .map(x-> x.name)
+        .forEach(x -> System.out.println(x));
 
 ---
 
