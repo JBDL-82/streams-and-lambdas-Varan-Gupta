@@ -26,7 +26,21 @@ class Employee {
     double salary;
 }
 ```
+Solution:
 
+```java
+Employee e1 = new Employee("Varan",500000);
+        Employee e2 = new Employee("Karan",3000);
+        Employee e3 = new Employee("Sharan",4000000);
+        List<Employee> empObj = new ArrayList<>();
+        empObj.add(e1);
+        empObj.add(e2);
+        empObj.add(e3);
+empObj.stream()
+        .filter(x-> x.salary > 50000)
+        .map(x-> x.name)
+        .forEach(x -> System.out.println(x));
+```
 ---
 
 #### **Q2. Word Frequency Counter**
@@ -36,7 +50,13 @@ Given a list of words, return a map with the frequency of each word.
 Input: ["apple", "banana", "apple"]
 Output: {apple=2, banana=1}
 ```
-
+```java
+List<String> words = Arrays.asList("apple", "banana", "apple");
+Map<String, Integer> MapObj = new HashMap<>();
+        
+words.stream()
+  .forEach(x-> MapObj.put(x, MapObj.getOrDefault(x,0) + 1));
+```
 ---
 
 #### **Q3. Group Employees by Department**
